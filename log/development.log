@@ -1,0 +1,347 @@
+  [1m[35m (3856.4ms)[0m  [1m[35mCREATE DATABASE "rails_journal_app_postgresql" ENCODING = 'unicode'[0m
+  [1m[35m (1102.4ms)[0m  [1m[35mCREATE DATABASE "rails_journal_app_test" ENCODING = 'unicode'[0m
+  [1m[35m (22.1ms)[0m  [1m[35mCREATE DATABASE "rails_journal_app_postgresql" ENCODING = 'unicode'[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE DATABASE "rails_journal_app_test" ENCODING = 'unicode'[0m
+  [1m[35m (89.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (109.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7264546312077990390)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCategories (20220819141046)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (88.0ms)[0m  [1m[35mCREATE TABLE "categories" ("id" bigserial primary key, "name" character varying, "description" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220819141046"]]
+  [1m[36mTRANSACTION (9.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.9ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-08-19 14:12:41.799764"], ["updated_at", "2022-08-19 14:12:41.799764"]]
+  [1m[36mTRANSACTION (4.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(7264546312077990390)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2022-08-19 22:12:58 +0800
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/share/rvm/gems/ruby-3.0.0/gems/railties-7.0.3.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/share/rvm/gems/ruby-3.0.0/gems/railties-7.0.3.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 9.9ms | Allocations: 743)
+Completed 200 OK in 47ms (Views: 19.7ms | ActiveRecord: 0.0ms | Allocations: 7048)
+
+
+Started GET "/categories" for 127.0.0.1 at 2022-08-19 22:13:03 +0800
+Processing by CategoriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:6
+  Rendered categories/index.html.erb within layouts/application (Duration: 11.1ms | Allocations: 1278)
+  Rendered layout layouts/application.html.erb (Duration: 472.5ms | Allocations: 92004)
+Completed 200 OK in 482ms (Views: 475.0ms | ActiveRecord: 0.7ms | Allocations: 93790)
+
+
+Started GET "/categories/new" for 127.0.0.1 at 2022-08-19 22:13:06 +0800
+Processing by CategoriesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 129.9ms | Allocations: 5650)
+  Rendered categories/new.html.erb within layouts/application (Duration: 131.5ms | Allocations: 5986)
+  Rendered layout layouts/application.html.erb (Duration: 136.1ms | Allocations: 8173)
+Completed 200 OK in 158ms (Views: 137.3ms | ActiveRecord: 6.2ms | Allocations: 13049)
+
+
+Started POST "/categories" for 127.0.0.1 at 2022-08-19 22:13:41 +0800
+Processing by CategoriesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "category"=>{"name"=>"School stuff", "description"=>"Stuff related to studying web development"}, "commit"=>"Create Category"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/categories_controller.rb:27:in `block in create'
+  [1m[36mCategory Create (1.0ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "School stuff"], ["description", "Stuff related to studying web development"], ["created_at", "2022-08-19 14:13:41.054114"], ["updated_at", "2022-08-19 14:13:41.054114"]]
+  ↳ app/controllers/categories_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (18.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/categories_controller.rb:27:in `block in create'
+Redirected to http://127.0.0.1:3000/categories/1
+Completed 302 Found in 30ms (ActiveRecord: 19.7ms | Allocations: 3415)
+
+
+Started GET "/categories/1" for 127.0.0.1 at 2022-08-19 22:13:41 +0800
+Processing by CategoriesController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:63:in `set_category'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/show.html.erb within layouts/application
+  Rendered categories/_category.html.erb (Duration: 0.8ms | Allocations: 204)
+  Rendered categories/show.html.erb within layouts/application (Duration: 18.7ms | Allocations: 1463)
+  Rendered layout layouts/application.html.erb (Duration: 22.8ms | Allocations: 3642)
+Completed 200 OK in 34ms (Views: 23.5ms | ActiveRecord: 5.6ms | Allocations: 6457)
+
+
+Started GET "/categories" for 127.0.0.1 at 2022-08-19 22:13:50 +0800
+Processing by CategoriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:6
+  Rendered categories/_category.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered categories/index.html.erb within layouts/application (Duration: 6.6ms | Allocations: 942)
+  Rendered layout layouts/application.html.erb (Duration: 11.8ms | Allocations: 3143)
+Completed 200 OK in 14ms (Views: 11.8ms | ActiveRecord: 0.9ms | Allocations: 3485)
+
+
+Started GET "/categories/new" for 127.0.0.1 at 2022-08-19 22:18:16 +0800
+Processing by CategoriesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 3.9ms | Allocations: 1048)
+  Rendered categories/new.html.erb within layouts/application (Duration: 5.8ms | Allocations: 1150)
+  Rendered layout layouts/application.html.erb (Duration: 12.2ms | Allocations: 3337)
+Completed 200 OK in 14ms (Views: 13.4ms | ActiveRecord: 0.0ms | Allocations: 3673)
+
+
+Started POST "/categories" for 127.0.0.1 at 2022-08-19 22:18:54 +0800
+Processing by CategoriesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "category"=>{"name"=>"Work stuff", "description"=>"put your work stuff here"}, "commit"=>"Create Category"}
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/categories_controller.rb:27:in `block in create'
+  [1m[36mCategory Create (1.6ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Work stuff"], ["description", "put your work stuff here"], ["created_at", "2022-08-19 14:18:54.658354"], ["updated_at", "2022-08-19 14:18:54.658354"]]
+  ↳ app/controllers/categories_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (48.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/categories_controller.rb:27:in `block in create'
+Redirected to http://127.0.0.1:3000/categories/2
+Completed 302 Found in 81ms (ActiveRecord: 51.4ms | Allocations: 2238)
+
+
+Started GET "/categories/2" for 127.0.0.1 at 2022-08-19 22:18:54 +0800
+Processing by CategoriesController#show as TURBO_STREAM
+  Parameters: {"id"=>"2"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:63:in `set_category'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/show.html.erb within layouts/application
+  Rendered categories/_category.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered categories/show.html.erb within layouts/application (Duration: 1.7ms | Allocations: 652)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 2831)
+Completed 200 OK in 8ms (Views: 5.8ms | ActiveRecord: 0.3ms | Allocations: 3635)
+
+
+Started GET "/categories" for 127.0.0.1 at 2022-08-19 22:18:57 +0800
+Processing by CategoriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:6
+  Rendered categories/_category.html.erb (Duration: 0.2ms | Allocations: 24)
+  Rendered categories/_category.html.erb (Duration: 0.2ms | Allocations: 23)
+  Rendered categories/index.html.erb within layouts/application (Duration: 13.0ms | Allocations: 1070)
+  Rendered layout layouts/application.html.erb (Duration: 18.1ms | Allocations: 3270)
+Completed 200 OK in 20ms (Views: 18.5ms | ActiveRecord: 0.5ms | Allocations: 3604)
+
+
+Started GET "/categories/1" for 127.0.0.1 at 2022-08-19 22:19:06 +0800
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCategory Load (1.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:63:in `set_category'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/show.html.erb within layouts/application
+  Rendered categories/_category.html.erb (Duration: 0.4ms | Allocations: 24)
+  Rendered categories/show.html.erb within layouts/application (Duration: 5.3ms | Allocations: 645)
+  Rendered layout layouts/application.html.erb (Duration: 19.1ms | Allocations: 2825)
+Completed 200 OK in 31ms (Views: 22.8ms | ActiveRecord: 1.3ms | Allocations: 3642)
+
+
+Started GET "/categories/new" for 127.0.0.1 at 2022-08-19 22:19:31 +0800
+Processing by CategoriesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 9.9ms | Allocations: 1051)
+  Rendered categories/new.html.erb within layouts/application (Duration: 12.6ms | Allocations: 1153)
+  Rendered layout layouts/application.html.erb (Duration: 21.2ms | Allocations: 3341)
+Completed 200 OK in 28ms (Views: 24.5ms | ActiveRecord: 0.0ms | Allocations: 3685)
+
+
+Started GET "/categories" for 127.0.0.1 at 2022-08-19 22:29:50 +0800
+Processing by CategoriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:6
+  Rendered categories/_category.html.erb (Duration: 0.6ms | Allocations: 200)
+  Rendered categories/_category.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered categories/index.html.erb within layouts/application (Duration: 53.5ms | Allocations: 4620)
+  Rendered layout layouts/application.html.erb (Duration: 65.7ms | Allocations: 7103)
+Completed 200 OK in 73ms (Views: 69.3ms | ActiveRecord: 7.3ms | Allocations: 8159)
+
+
+Started GET "/categories/2" for 127.0.0.1 at 2022-08-19 22:29:51 +0800
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:63:in `set_category'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/show.html.erb within layouts/application
+  Rendered categories/_category.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered categories/show.html.erb within layouts/application (Duration: 10.4ms | Allocations: 837)
+  Rendered layout layouts/application.html.erb (Duration: 22.7ms | Allocations: 3016)
+Completed 200 OK in 32ms (Views: 23.5ms | ActiveRecord: 0.9ms | Allocations: 3928)
+
+
+Started DELETE "/categories/2" for 127.0.0.1 at 2022-08-19 22:29:54 +0800
+Processing by CategoriesController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"2"}
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:63:in `set_category'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/categories_controller.rb:52:in `destroy'
+  [1m[36mCategory Destroy (0.5ms)[0m  [1m[31mDELETE FROM "categories" WHERE "categories"."id" = $1[0m  [["id", 2]]
+  ↳ app/controllers/categories_controller.rb:52:in `destroy'
+  [1m[36mTRANSACTION (12.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/categories_controller.rb:52:in `destroy'
+Redirected to http://127.0.0.1:3000/categories
+Completed 302 Found in 28ms (ActiveRecord: 14.3ms | Allocations: 2419)
+
+
+Started GET "/categories" for 127.0.0.1 at 2022-08-19 22:29:54 +0800
+Processing by CategoriesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:6
+  Rendered categories/_category.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered categories/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1020)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 3224)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.3ms | Allocations: 3609)
+
+
+Started GET "/categories/new" for 127.0.0.1 at 2022-08-19 22:29:58 +0800
+Processing by CategoriesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 4.0ms | Allocations: 1428)
+  Rendered categories/new.html.erb within layouts/application (Duration: 5.7ms | Allocations: 1743)
+  Rendered layout layouts/application.html.erb (Duration: 11.7ms | Allocations: 3930)
+Completed 200 OK in 15ms (Views: 12.9ms | ActiveRecord: 0.0ms | Allocations: 4320)
+
+
+Started GET "/categories" for 127.0.0.1 at 2022-08-19 22:30:01 +0800
+Processing by CategoriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:6
+  Rendered categories/_category.html.erb (Duration: 0.2ms | Allocations: 24)
+  Rendered categories/index.html.erb within layouts/application (Duration: 6.3ms | Allocations: 942)
+  Rendered layout layouts/application.html.erb (Duration: 15.4ms | Allocations: 3142)
+Completed 200 OK in 17ms (Views: 16.1ms | ActiveRecord: 0.4ms | Allocations: 3476)
+
+
+Started GET "/categories/new" for 127.0.0.1 at 2022-08-19 22:30:03 +0800
+Processing by CategoriesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 3.9ms | Allocations: 1059)
+  Rendered categories/new.html.erb within layouts/application (Duration: 5.1ms | Allocations: 1161)
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | Allocations: 3348)
+Completed 200 OK in 18ms (Views: 14.9ms | ActiveRecord: 0.0ms | Allocations: 3684)
+
+
+Started POST "/categories" for 127.0.0.1 at 2022-08-19 22:30:11 +0800
+Processing by CategoriesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "category"=>{"name"=>"Work stuff", "description"=>"fdsafsdfsdfds"}, "commit"=>"Create Category"}
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/categories_controller.rb:27:in `block in create'
+  [1m[36mCategory Create (2.6ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Work stuff"], ["description", "fdsafsdfsdfds"], ["created_at", "2022-08-19 14:30:11.238194"], ["updated_at", "2022-08-19 14:30:11.238194"]]
+  ↳ app/controllers/categories_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (15.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/categories_controller.rb:27:in `block in create'
+Redirected to http://127.0.0.1:3000/categories/3
+Completed 302 Found in 45ms (ActiveRecord: 18.9ms | Allocations: 2256)
+
+
+Started GET "/categories/3" for 127.0.0.1 at 2022-08-19 22:30:11 +0800
+Processing by CategoriesController#show as TURBO_STREAM
+  Parameters: {"id"=>"3"}
+  [1m[36mCategory Load (1.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:63:in `set_category'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/show.html.erb within layouts/application
+  Rendered categories/_category.html.erb (Duration: 0.5ms | Allocations: 23)
+  Rendered categories/show.html.erb within layouts/application (Duration: 7.0ms | Allocations: 665)
+  Rendered layout layouts/application.html.erb (Duration: 16.3ms | Allocations: 2844)
+Completed 200 OK in 29ms (Views: 18.8ms | ActiveRecord: 1.5ms | Allocations: 3648)
+
+
+Started GET "/categories" for 127.0.0.1 at 2022-08-19 22:30:13 +0800
+Processing by CategoriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (7.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:6
+  Rendered categories/_category.html.erb (Duration: 0.3ms | Allocations: 24)
+  Rendered categories/_category.html.erb (Duration: 0.3ms | Allocations: 22)
+  Rendered categories/index.html.erb within layouts/application (Duration: 22.4ms | Allocations: 1085)
+  Rendered layout layouts/application.html.erb (Duration: 37.0ms | Allocations: 3289)
+Completed 200 OK in 43ms (Views: 32.6ms | ActiveRecord: 7.6ms | Allocations: 3623)
+
+
+Started GET "/categories/1" for 127.0.0.1 at 2022-08-19 22:38:33 +0800
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:63:in `set_category'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/show.html.erb within layouts/application
+  Rendered categories/_category.html.erb (Duration: 0.2ms | Allocations: 24)
+  Rendered categories/show.html.erb within layouts/application (Duration: 2.3ms | Allocations: 633)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 2812)
+Completed 200 OK in 56ms (Views: 7.3ms | ActiveRecord: 7.0ms | Allocations: 6639)
+
+
+Started GET "/categories" for 127.0.0.1 at 2022-08-19 22:38:35 +0800
+Processing by CategoriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:6
+  Rendered categories/_category.html.erb (Duration: 0.2ms | Allocations: 24)
+  Rendered categories/_category.html.erb (Duration: 0.2ms | Allocations: 22)
+  Rendered categories/index.html.erb within layouts/application (Duration: 6.8ms | Allocations: 1067)
+  Rendered layout layouts/application.html.erb (Duration: 13.6ms | Allocations: 3267)
+Completed 200 OK in 16ms (Views: 14.0ms | ActiveRecord: 0.6ms | Allocations: 3601)
+
+
+Started GET "/categories" for 127.0.0.1 at 2022-08-19 23:33:40 +0800
+Processing by CategoriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:6
+  Rendered categories/_category.html.erb (Duration: 0.1ms | Allocations: 40)
+  Rendered categories/_category.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered categories/index.html.erb within layouts/application (Duration: 37.0ms | Allocations: 5350)
+  Rendered layout layouts/application.html.erb (Duration: 51.5ms | Allocations: 19035)
+Completed 200 OK in 56ms (Views: 52.9ms | ActiveRecord: 7.0ms | Allocations: 20675)
+
+
+Started GET "/categories/1" for 127.0.0.1 at 2022-08-19 23:33:45 +0800
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:63:in `set_category'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/show.html.erb within layouts/application
+  Rendered categories/_category.html.erb (Duration: 0.2ms | Allocations: 24)
+  Rendered categories/show.html.erb within layouts/application (Duration: 2.5ms | Allocations: 637)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 2816)
+Completed 200 OK in 15ms (Views: 9.6ms | ActiveRecord: 0.8ms | Allocations: 4220)
+
+
+Started GET "/categories" for 127.0.0.1 at 2022-08-19 23:33:47 +0800
+Processing by CategoriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:6
+  Rendered categories/_category.html.erb (Duration: 0.2ms | Allocations: 24)
+  Rendered categories/_category.html.erb (Duration: 0.2ms | Allocations: 22)
+  Rendered categories/index.html.erb within layouts/application (Duration: 7.6ms | Allocations: 1083)
+  Rendered layout layouts/application.html.erb (Duration: 13.2ms | Allocations: 3283)
+Completed 200 OK in 15ms (Views: 14.0ms | ActiveRecord: 0.5ms | Allocations: 3617)
+
+
