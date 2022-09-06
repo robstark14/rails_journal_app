@@ -22550,3 +22550,216 @@ Processing by Devise::RegistrationsController#new as HTML
 Completed 200 OK in 45ms (Views: 41.2ms | ActiveRecord: 0.0ms | Allocations: 6732)
 
 
+Started GET "/" for 127.0.0.1 at 2022-09-06 22:58:22 +0800
+  [1m[36mActiveRecord::SchemaMigration Pluck (40.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CategoriesController#index as HTML
+Completed 401 Unauthorized in 86ms (ActiveRecord: 0.0ms | Allocations: 5949)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-09-06 22:58:25 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 12.1ms | Allocations: 858)
+  Rendered /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 90.4ms | Allocations: 4298)
+  Rendered layout layouts/application.html.erb (Duration: 294.0ms | Allocations: 54174)
+Completed 200 OK in 590ms (Views: 386.2ms | ActiveRecord: 121.4ms | Allocations: 63688)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-09-06 22:58:37 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 142)
+  Rendered /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 4.1ms | Allocations: 1274)
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | Allocations: 6095)
+Completed 200 OK in 19ms (Views: 16.3ms | ActiveRecord: 0.0ms | Allocations: 6827)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-09-06 22:58:38 +0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/shared/_error_messages.html.erb (Duration: 35.0ms | Allocations: 238)
+  Rendered /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 225)
+  Rendered /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 66.2ms | Allocations: 2295)
+  Rendered layout layouts/application.html.erb (Duration: 72.8ms | Allocations: 7204)
+Completed 200 OK in 76ms (Views: 75.0ms | ActiveRecord: 0.0ms | Allocations: 8576)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-09-06 22:58:39 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 1.5ms | Allocations: 142)
+  Rendered /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 12.9ms | Allocations: 1274)
+  Rendered layout layouts/application.html.erb (Duration: 41.1ms | Allocations: 6095)
+Completed 200 OK in 50ms (Views: 44.0ms | ActiveRecord: 0.0ms | Allocations: 6831)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-09-06 22:58:41 +0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 18)
+  Rendered /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 86)
+  Rendered /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1256)
+  Rendered layout layouts/application.html.erb (Duration: 17.8ms | Allocations: 6077)
+Completed 200 OK in 23ms (Views: 19.4ms | ActiveRecord: 0.0ms | Allocations: 6745)
+
+
+  [1m[36mUser Load (65.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-09-06 23:00:29 +0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/shared/_error_messages.html.erb (Duration: 0.2ms | Allocations: 18)
+  Rendered /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 86)
+  Rendered /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 8.2ms | Allocations: 1256)
+  Rendered layout layouts/application.html.erb (Duration: 28.6ms | Allocations: 6076)
+Completed 200 OK in 33ms (Views: 30.1ms | ActiveRecord: 0.0ms | Allocations: 6737)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-09-06 23:00:39 +0800
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"red@mail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (2.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "red@mail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (36.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "red@mail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-09-06 15:00:40.395056"], ["updated_at", "2022-09-06 15:00:40.395056"]]
+  [1m[36mTRANSACTION (9.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 475ms (ActiveRecord: 48.6ms | Allocations: 10600)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-06 23:00:40 +0800
+Processing by CategoriesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (34.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:6
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/categories/index.html.erb:7
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/categories/index.html.erb:7
+  Rendered categories/index.html.erb within layouts/application (Duration: 64.3ms | Allocations: 9712)
+  Rendered layout layouts/application.html.erb (Duration: 71.4ms | Allocations: 14582)
+Completed 200 OK in 93ms (Views: 30.8ms | ActiveRecord: 43.2ms | Allocations: 20062)
+
+
+Started GET "/categories/new" for 127.0.0.1 at 2022-09-06 23:00:56 +0800
+Processing by CategoriesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 19.2ms | Allocations: 1559)
+  Rendered categories/new.html.erb within layouts/application (Duration: 53.1ms | Allocations: 1877)
+  Rendered layout layouts/application.html.erb (Duration: 59.1ms | Allocations: 6662)
+Completed 200 OK in 65ms (Views: 59.9ms | ActiveRecord: 0.4ms | Allocations: 8285)
+
+
+Started POST "/categories" for 127.0.0.1 at 2022-09-06 23:01:00 +0800
+Processing by CategoriesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "category"=>{"name"=>"adsgsdgsdg", "description"=>"gdsgsdagsdgsadgsdg"}, "commit"=>"Create Category"}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/categories_controller.rb:41:in `create'
+  [1m[36mCategory Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "adsgsdgsdg"], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:41:in `create'
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:41:in `create'
+  [1m[36mCategory Create (62.1ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "adsgsdgsdg"], ["description", "gdsgsdagsdgsadgsdg"], ["created_at", "2022-09-06 15:01:01.062480"], ["updated_at", "2022-09-06 15:01:01.062480"], ["user_id", 3]]
+  ↳ app/controllers/categories_controller.rb:41:in `create'
+  [1m[36mTRANSACTION (19.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/categories_controller.rb:41:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/categories_controller.rb:43:in `create'
+  [1m[36mCategory Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 AND "categories"."id" != $2 LIMIT $3[0m  [["name", "adsgsdgsdg"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:43:in `create'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/categories_controller.rb:43:in `create'
+Redirected to http://127.0.0.1:3000/categories/3
+Completed 302 Found in 133ms (ActiveRecord: 87.9ms | Allocations: 7335)
+
+
+Started GET "/categories/3" for 127.0.0.1 at 2022-09-06 23:01:01 +0800
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:12:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/show.html.erb within layouts/application
+  Rendered categories/_category.html.erb (Duration: 8.6ms | Allocations: 204)
+  [1m[36mTask Load (20.8ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."category_id" = $1[0m  [["category_id", 3]]
+  ↳ app/views/categories/show.html.erb:17
+  Rendered categories/show.html.erb within layouts/application (Duration: 83.0ms | Allocations: 6973)
+  Rendered layout layouts/application.html.erb (Duration: 92.5ms | Allocations: 11758)
+Completed 200 OK in 103ms (Views: 70.2ms | ActiveRecord: 24.4ms | Allocations: 14396)
+
+
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started GET "/" for 127.0.0.1 at 2022-09-06 23:53:18 +0800
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CategoriesController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (2.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:6
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/categories/index.html.erb:7
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/categories/index.html.erb:7
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/categories/index.html.erb:7
+  Rendered categories/_category.html.erb (Duration: 0.7ms | Allocations: 231)
+  Rendered categories/index.html.erb within layouts/application (Duration: 34.0ms | Allocations: 11320)
+  Rendered layout layouts/application.html.erb (Duration: 151.6ms | Allocations: 61126)
+Completed 200 OK in 209ms (Views: 149.2ms | ActiveRecord: 20.0ms | Allocations: 81352)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2022-09-06 23:53:22 +0800
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 75ms (ActiveRecord: 0.7ms | Allocations: 4394)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-06 23:53:22 +0800
+Processing by CategoriesController#index as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 397)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-09-06 23:53:22 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 2.2ms | Allocations: 849)
+  Rendered /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 10.6ms | Allocations: 3953)
+  Rendered layout layouts/application.html.erb (Duration: 19.8ms | Allocations: 8862)
+Completed 200 OK in 26ms (Views: 22.8ms | ActiveRecord: 0.0ms | Allocations: 10756)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-09-07 00:01:17 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 1.5ms | Allocations: 142)
+  Rendered /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 20.9ms | Allocations: 1274)
+  Rendered layout layouts/application.html.erb (Duration: 57.6ms | Allocations: 6098)
+Completed 200 OK in 66ms (Views: 60.6ms | Allocations: 6849)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-09-07 00:27:53 +0800
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/shared/_error_messages.html.erb (Duration: 1.0ms | Allocations: 247)
+  Rendered /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 1.5ms | Allocations: 672)
+  Rendered /usr/share/rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 12.4ms | Allocations: 6422)
+  Rendered layout layouts/application.html.erb (Duration: 140.2ms | Allocations: 66259)
+Completed 200 OK in 171ms (Views: 146.0ms | ActiveRecord: 5.8ms | Allocations: 77922)
+
+
