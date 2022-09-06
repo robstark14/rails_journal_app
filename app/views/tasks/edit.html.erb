@@ -1,0 +1,17 @@
+<h1>Editing task</h1>
+
+
+
+<br>
+
+<div>
+<%= form_with model: [@task.category, @task] do |f| %>
+  <%= f.label "Task", style: "display:block"%>
+  <%= f.text_field :name %>
+  <%= f.label "details", style: "display:block" %>
+  <%= f.text_field :details %>
+  <%# <%= link_to "Show this task", @task %>
+  <%# <%= link_to "Back to tasks", tasks_path %>
+  <%= f.submit style: "display:block"%>
+  <% end %>
+</div>

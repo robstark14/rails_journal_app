@@ -1,0 +1,13 @@
+<%= form_with model: [@category, @category.tasks.build] do |form| %>
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+    <%= form.label :details, style: "display: block" %>
+    <%= form.text_field :details %>
+
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

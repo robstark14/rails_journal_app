@@ -1,0 +1,19 @@
+
+
+<p style="color: green"><%= notice %></p>
+
+<div >
+    
+    
+        <p>Task: <%= @task.name %> </p>
+        <p>Details: <%= @task.details %></p>
+        <p>Created at: <%= @task.created_at %></p>
+        <p>Updated at: <%= @task.updated_at %></p>
+    
+    <div class="card-footer">
+    <%= link_to 'Edit', edit_category_task_path(@category.id, @task.id)%>
+    <%= link_to "Back", category_path(@category.id) %>
+    
+    <%= link_to 'Delete', category_task_path(@category.id, @task.id), {method: :delete} %>
+</div>
+</div>

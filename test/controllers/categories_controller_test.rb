@@ -3,6 +3,9 @@ require "test_helper"
 class CategoriesControllerTest < ActionDispatch::IntegrationTest
   setup do
     @category = categories(:one)
+    get '/users/sign_in'
+    sign_in users(:user_001)
+    post user_session_url
   end
 
   test "should get index" do
@@ -34,7 +37,7 @@ class CategoriesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update category" do
-    patch category_url(@category), params: { category: { description: "Some web development school stuff", name: "School stuff" } }
+    patch category_url(@category), params: { category: { name: @category.name } }
     assert_redirected_to category_url(@category)
   end
 
@@ -46,29 +49,5 @@ class CategoriesControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to categories_url
   end
 
-  test "should reject update category with an empty name" do
-    patch category_url(@category), params: { category: {description: "Some web development school stuff", name: ""}}
-    assert_response :unprocessable_entity
-  end
-
-  test "should reject update category with a name greater than 20 chars" do
-    patch category_url(@category), params: { category: {description: "Some web development school stuff", name: "School stuffsssssssssssssssssssssssssssssss"}}
-    assert_response :unprocessable_entity
-  end
-
-  test "should reject update category with an empty description" do
-    patch category_url(@category), params: { category: {description: "", name: "School stuff"}}
-    assert_response :unprocessable_entity
-  end
-
-  test "should reject update category with a description greater than 100 chars" do
-    patch category_url(@category), params: { category: {description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.', name: "School stuff"}}
-    assert_response :unprocessable_entity
-  end
-
-  test "should reject update category with a description less than 10 chars" do
-    patch category_url(@category), params: { category: {description: "School", name: "School stuff"}}
-    assert_response :unprocessable_entity
-  end
-  
+ 
 end
